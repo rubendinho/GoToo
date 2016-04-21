@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'koala'
 gem 'geocoder'
 gem 'figaro'
 gem 'rails_12factor'
