@@ -50,4 +50,12 @@ ActiveRecord::Schema.define(version: 20160421222724) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  create_table "locations", force: :cascade do |t|
+    t.string   "city_name"
+    t.string   "state_province"
+    t.integer  "country"
+    t.text     "description"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 end
