@@ -12,15 +12,22 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160421215217) do
 =======
 ActiveRecord::Schema.define(version: 20160421222724) do
 >>>>>>> 701af124c8c6e9cc2719c08edc3fc6c4805ef129
+=======
+ActiveRecord::Schema.define(version: 20160421222724) do
+>>>>>>> de406a85489df1c635039f378b75a06dce17fab1
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> de406a85489df1c635039f378b75a06dce17fab1
   create_table "locations", force: :cascade do |t|
     t.string   "city_name"
     t.string   "state_province"
@@ -30,7 +37,10 @@ ActiveRecord::Schema.define(version: 20160421222724) do
     t.datetime "updated_at",     null: false
   end
 
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> de406a85489df1c635039f378b75a06dce17fab1
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -65,5 +75,8 @@ ActiveRecord::Schema.define(version: 20160421222724) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+<<<<<<< HEAD
 >>>>>>> 701af124c8c6e9cc2719c08edc3fc6c4805ef129
+=======
+>>>>>>> de406a85489df1c635039f378b75a06dce17fab1
 end
