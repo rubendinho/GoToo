@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
    "Female": 2,
    "Not sure": 3,
    "Prefer not to say": 4,
-   "Other": 5
+   "Neuchacho": 5,
+   "Other": 6
   }
 
   enum citizenship: {
