@@ -19,11 +19,7 @@
 
 .head-room { margin-top: .5rem; }
 
-// div.toast {
-//   margin: auto !important;
-//   // left: -171% !important;
-//   top: 30px !important;
-// }
+/* Fix for the Toast-dialog flash messages */
 
 @media only screen and (min-width: 993px){
   #toast-container {
