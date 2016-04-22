@@ -93,15 +93,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    materialize-sass (0.97.5)
-=======
     materialize-sass (0.97.6)
->>>>>>> 701af124c8c6e9cc2719c08edc3fc6c4805ef129
-=======
-    materialize-sass (0.97.6)
->>>>>>> de406a85489df1c635039f378b75a06dce17fab1
       sass (~> 3.3)
     mime-types (3.0)
       mime-types-data (~> 3.2015)

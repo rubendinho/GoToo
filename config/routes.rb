@@ -1,23 +1,10 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-<<<<<<< HEAD
-  resources :locations
-=======
-=======
-
->>>>>>> de406a85489df1c635039f378b75a06dce17fab1
   devise_for :users
   resources :users
   resources :locations
   root 'welcome#index'
 
   get 'welcome/index'
-
-<<<<<<< HEAD
->>>>>>> 701af124c8c6e9cc2719c08edc3fc6c4805ef129
-=======
-
->>>>>>> de406a85489df1c635039f378b75a06dce17fab1
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
