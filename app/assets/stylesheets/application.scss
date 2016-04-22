@@ -11,8 +11,23 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require materialize
  *= require_self
  */
 
-@import 'materialize';
-@import 'font-awesome';
+.stahp { margin-top: -.2rem; }
+
+.head-room { margin-top: .5rem; }
+
+// div.toast {
+//   margin: auto !important;
+//   // left: -171% !important;
+//   top: 30px !important;
+// }
+
+@media only screen and (min-width: 993px){
+  #toast-container {
+    right: 40% !important;
+    top: 13% !important;
+  }
+}

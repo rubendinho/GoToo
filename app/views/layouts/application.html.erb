@@ -5,7 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
+
 <body>
   <!-- Navbar section -->
   <nav>
@@ -21,13 +26,23 @@
 
   <!-- Flash Messages -->
   <center>
-    <div class="container">
+    <!-- <div>
       <% flash.each do |key, value| %>
-        <div class="chip">
-          <%= value %><i class="material-icons"><i class="fa fa-times" aria-hidden="true"></i></i>
+        <div class="chip head-room">
+          <%= value %><i class="material-icons stahp"><i class="fa fa-times" aria-hidden="true"></i></i>
         </div>
       <% end %>
-    </div>
+    </div> -->
+    <% if notice %>
+      <script type="text/javascript">
+        Materialize.toast('<%= notice %>', 3000, 'rounded')
+      </script>
+    <% end %>
+    <% if alert %>
+      <script type="text/javascript">
+        Materialize.toast('<%= alert %>', 3000, 'rounded')
+      </script>
+    <% end %>
   </center><!-- End of Flash Message section -->
 
 
@@ -37,5 +52,6 @@
       <h1><%= yield :header %></h1>
     <%= yield %>
   </div>
+
 </body>
 </html>

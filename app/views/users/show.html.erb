@@ -1,34 +1,35 @@
-<p id="notice"><%= notice %></p>
+<center class="head-room">
+  <br><br><br>
+  <p>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+  <p>
+    <strong>Hometown:</strong>
+    <%= @user.hometown %>
+  </p>
 
-<p>
-  <strong>Hometown:</strong>
-  <%= @user.hometown %>
-</p>
+  <p>
+    <strong>Citizenship:</strong>
+    <%= @user.citizenship %>
+  </p>
 
-<p>
-  <strong>Citizenship:</strong>
-  <%= @user.citizenship %>
-</p>
+  <p>
+    <strong>Gender:</strong>
+    <%= @user.gender %>
+  </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
+  <p>
+    <strong>Age:</strong>
+    <%= @user.age %>
+  </p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @user.age %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</center>
