@@ -7,11 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <!-- Navbar section -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">&nbsp;go<i class="fa fa-plane" aria-hidden="true"></i>oo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Stub1</a></li>
+        <li><a href="#">Stub2</a></li>
+        <li><a href="#">Stub3</a></li>
+      </ul>
+    </div>
+  </nav><!-- Closing of Navbar section -->
+
+  <!-- Flash Messages -->
+  <center>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="chip">
+          <%= value %><i class="material-icons"><i class="fa fa-times" aria-hidden="true"></i></i>
+        </div>
+      <% end %>
+    </div>
+  </center><!-- End of Flash Message section -->
 
 
-<%= yield %>
+  <%= yield :top_content %>
 
+  <div class="container">
+      <h1><%= yield :header %></h1>
+    <%= yield %>
+  </div>
 </body>
 </html>

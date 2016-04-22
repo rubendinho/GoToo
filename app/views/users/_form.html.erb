@@ -27,11 +27,11 @@
     <%= f.label :hometown %><br>
     <%= f.text_field :hometown %>
   </div>
-  <div class="field">
+  <div class="input-field">
     <%= f.label :citizenship %><br>
     <%= f.select :citizenship, User.citizenships.keys.map {|country| [country.titleize, country]}, placeholder: "Country of Citizenship" %>
   </div>
-  <div class="field">
+  <div class="input-field">
     <%= f.label :gender %><br>
     <%= f.select :gender, User.genders.keys.map {|gender| [gender.capitalize, gender ]}, placeholder: "Gender" %>
   </div>
