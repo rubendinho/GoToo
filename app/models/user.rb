@@ -276,4 +276,12 @@ class User < ActiveRecord::Base
    "Zimbabwe": 261,
    "Åland Islands": 262
   }
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
+  def full_location
+    "#{self.hometown}, #{self.citizenship}"
+  end
 end
