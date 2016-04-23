@@ -20,11 +20,14 @@
 
 /* Navbar alignment fix */
 .left-ish {
- @extend .left;
- margin-left: 10%;
+  @extend .left;
+  margin-left: 10%;
 }
 
-.stahp { margin-top: -.2rem; }
+/* User Profile Card */
+span.right {
+  display: inline-block;
+}
 
 .head-room { margin-top: .5rem; }
 

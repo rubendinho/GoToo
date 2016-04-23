@@ -26,13 +26,6 @@
 
   <!-- Flash Messages -->
   <center>
-    <!-- <div>
-      <% flash.each do |key, value| %>
-        <div class="chip head-room">
-          <%= value %><i class="material-icons stahp"><i class="fa fa-times" aria-hidden="true"></i></i>
-        </div>
-      <% end %>
-    </div> -->
     <% if notice %>
       <script type="text/javascript">
         Materialize.toast('<%= notice %>', 3000, 'rounded')

@@ -2,36 +2,37 @@
 
 <h1>Listing Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Hometown</th>
-      <th>Citizenship</th>
-      <th>Gender</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.hometown %></td>
-        <td><%= user.citizenship %></td>
-        <td><%= user.gender %></td>
-        <td><%= user.age %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @users.each do |user| %>
+    <div class="col m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><%= user.full_name %></span>
+          <hr>
+          <span>
+            <h6><b>Based in:&nbsp;</b>
+              <small><%= user.full_location %></small>
+            </h6>
+            <h6>
+              Gender
+              <small><%= user.gender %></small>
+            </h6>
+            <h6>
+              <b>Age</b>
+              <small><%= user.age %></small>
+            </h6>
+          </span>
+        </div>
+        <div class="card-action">
+          <%= link_to "Profile", user %>
+          <%= link_to "Request Friend", "#" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <br>
 
 <%= link_to 'New User', new_user_path %>
+
