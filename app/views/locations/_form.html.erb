@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :country %><br>
-    <%= f.number_field :country %>
+    <%= f.select :country, Location.countries.keys.map {|country| [country, country]}, placeholder: "Country" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

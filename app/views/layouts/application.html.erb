@@ -5,13 +5,46 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
+
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <!-- Navbar section -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">&nbsp;go<i class="fa fa-plane" aria-hidden="true"></i>oo</a>
+      <ul id="nav-mobile" class="left-ish hide-on-med-and-down">
+        <li><%= link_to "Home", user_path(current_user.id) %></li>
+        <li><a href="#">Stub2</a></li>
+        <li><a href="#">Stub3</a></li>
+      </ul>
+    </div>
+  </nav><!-- Closing of Navbar section -->
+
+  <!-- Flash Messages -->
+  <center>
+    <% if notice %>
+      <script type="text/javascript">
+        Materialize.toast('<%= notice %>', 3000, 'rounded')
+      </script>
+    <% end %>
+    <% if alert %>
+      <script type="text/javascript">
+        Materialize.toast('<%= alert %>', 3000, 'rounded')
+      </script>
+    <% end %>
+  </center><!-- End of Flash Message section -->
 
 
-<%= yield %>
+  <%= yield :top_content %>
+
+  <div class="container">
+      <h1><%= yield :header %></h1>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

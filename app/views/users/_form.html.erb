@@ -32,8 +32,8 @@
     <%= f.select :citizenship, User.citizenships.keys.map {|country| [country.titleize, country]}, placeholder: "Country of Citizenship" %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.select :gender, User.genders.keys.map {|gender| [gender.capitalize, gender ]}, placeholder: "Gender" %>
+    <%= f.label :gender %><br><br>
+    <%= f.select :gender, User.genders.keys.map {|gender| [gender.capitalize, gender ]}, placeholder: "Gender"%>
   </div>
   <div class="field">
     <%= f.label :age %><br>

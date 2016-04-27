@@ -4,12 +4,21 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+   def full_name
+     "#{self.first_name} #{self.last_name}"
+   end
+
+   def full_location
+     "#{self.hometown}, #{self.citizenship}"
+   end
+
   enum gender: {
    "Male": 1,
    "Female": 2,
    "Not sure": 3,
    "Prefer not to say": 4,
-   "Other": 5
+   "Neuchacho": 5,
+   "Other": 6
   }
 
   enum citizenship: {
@@ -275,4 +284,5 @@ class User < ActiveRecord::Base
    "Zimbabwe": 261,
    "Åland Islands": 262
   }
+
 end

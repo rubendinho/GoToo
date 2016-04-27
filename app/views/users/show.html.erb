@@ -1,34 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Hometown:</strong>
-  <%= @user.hometown %>
-</p>
-
-<p>
-  <strong>Citizenship:</strong>
-  <%= @user.citizenship %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @user.age %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="col m12">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"><h3><%= @user.full_name %><h3></span>
+        <hr>
+        <span>
+          <h6><b>Based in:&nbsp;</b>
+            <small><%= @user.full_location %></small>
+          </h6>
+          <h6>
+            <b>Gender:&nbsp;</b>
+            <small><%= @user.gender %></small>
+          </h6>
+          <h6>
+            <b>Age:&nbsp;</b>
+            <small><%= @user.age %></small>
+          </h6>
+        </span>
+      </div>
+      <div class="card-action">
+        <%= link_to "Something", "#" %>
+        <%= link_to "Request Friend", "#" %>
+      </div>
+    </div>
+  </div>
+</div>
