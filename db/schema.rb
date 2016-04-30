@@ -11,23 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160421215217) do
-=======
-ActiveRecord::Schema.define(version: 20160421222724) do
->>>>>>> 701af124c8c6e9cc2719c08edc3fc6c4805ef129
-=======
-ActiveRecord::Schema.define(version: 20160421222724) do
->>>>>>> de406a85489df1c635039f378b75a06dce17fab1
+ActiveRecord::Schema.define(version: 20160430200232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> de406a85489df1c635039f378b75a06dce17fab1
+  create_table "attractions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "type_of"
+    t.string   "address"
+    t.decimal  "latitude",    precision: 9, scale: 6
+    t.decimal  "longitude",   precision: 9, scale: 6
+    t.text     "description"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "user_id"
+  end
+
+  add_index "attractions", ["user_id"], name: "index_attractions_on_user_id", using: :btree
+
   create_table "locations", force: :cascade do |t|
     t.string   "city_name"
     t.string   "state_province"
@@ -37,10 +40,13 @@ ActiveRecord::Schema.define(version: 20160421222724) do
     t.datetime "updated_at",     null: false
   end
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> de406a85489df1c635039f378b75a06dce17fab1
+  create_table "spatial_ref_sys", primary_key: "srid", force: :cascade do |t|
+    t.string  "auth_name", limit: 256
+    t.integer "auth_srid"
+    t.string  "srtext",    limit: 2048
+    t.string  "proj4text", limit: 2048
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -75,8 +81,5 @@ ActiveRecord::Schema.define(version: 20160421222724) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
-<<<<<<< HEAD
->>>>>>> 701af124c8c6e9cc2719c08edc3fc6c4805ef129
-=======
->>>>>>> de406a85489df1c635039f378b75a06dce17fab1
+  add_foreign_key "attractions", "users"
 end
