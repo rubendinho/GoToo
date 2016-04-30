@@ -25,6 +25,7 @@ class AttractionsController < ApplicationController
   # POST /attractions.json
   def create
     @attraction = Attraction.new(attraction_params)
+    @attraction.user_id = current_user.id
 
     respond_to do |format|
       if @attraction.save
@@ -69,6 +70,6 @@ class AttractionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attraction_params
-      params.require(:attraction).permit(:name, :type_of, :address, :latitude, :longitude, :description)
+      params.require(:attraction).permit(:name, :type_of, :address, :latitude, :longitude, :description, :user_id)
     end
 end
