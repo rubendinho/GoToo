@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :hometown %><br>
-    <%= f.text_field :hometown %>
+    <%= f.text_field :hometown, placeholder: "City, State/Province (example:  Dallas, TX / Vancouver, BC)" %>
   </div>
   <div class="field">
     <%= f.label :citizenship %><br>
-    <%= f.select :citizenship, User.citizenships.keys.map {|country| [country.titleize, country]}, placeholder: "Country of Citizenship" %>
+    <%= f.select :citizenship, User.citizenships.keys.map {|country| [country, country]}, placeholder: "Country of Citizenship" %>
   </div>
   <div class="field">
     <%= f.label :gender %><br><br>
