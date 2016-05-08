@@ -9,6 +9,14 @@
             <small><%= @user.full_location %></small>
           </h6>
           <h6>
+            <b>Current location:&nbsp;</b>
+            <small>
+              <%= @current_location.data['city'] %>,
+              <%= @current_location.data['region_name'] %>,
+              <%= @current_location.data['country_name'] %>
+            </small>
+          </h6>
+          <h6>
             <b>Gender:&nbsp;</b>
             <small><%= @user.gender %></small>
           </h6>
