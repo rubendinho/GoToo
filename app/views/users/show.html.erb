@@ -1,12 +1,31 @@
+<%= javascript_tag do %>
+   latitude  = '<%= j @current_location.data['latitude'] %>';
+   longitude = '<%= j @current_location.data['longitude'] %>';
+   city      = '<%= j @current_location.data['city'] %>';
+   region    = '<%= @current_location.data['region_name'] %>';
+   country   = '<%= @current_location.data['country_name'] %>';
+<% end %>
+
 <div class="row">
   <div class="col m12">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
-        <span class="card-title"><h3><%= @user.full_name %><h3></span>
+        <span class="card-title">
+          <%= image_tag "creeper_face.jpg", id: "profile-pic" %>
+          <h3 id="name"><%= @user.full_name %><h3>
+        </span>
         <hr>
-        <span>
+        <span id="user-info">
           <h6><b>Based in:&nbsp;</b>
             <small><%= @user.full_location %></small>
+          </h6>
+          <h6>
+            <b>Current location:&nbsp;</b>
+            <small>
+              <%= @current_location.data['city'] %>,
+              <%= @current_location.data['region_name'] %>,
+              <%= @current_location.data['country_name'] %>
+            </small>
           </h6>
           <h6>
             <b>Gender:&nbsp;</b>
@@ -17,6 +36,7 @@
             <small><%= @user.age %></small>
           </h6>
         </span>
+        <div id="profile-map"></div>
       </div>
       <div class="card-action">
         <%= link_to "Something", "#" %>
@@ -25,3 +45,6 @@
     </div>
   </div>
 </div>
+<br>
+<br>
+<%= @current_location.inspect %>
