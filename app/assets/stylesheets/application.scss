@@ -29,6 +29,15 @@ span.right {
   display: inline-block;
 }
 
+#user-info {
+  float: left;
+  margin-right: 30%;
+}
+
+div#map-canvas {
+  color: black;
+}
+
 .head-room { margin-top: .5rem; }
 
 /* Fix for the Toast-dialog flash messages */

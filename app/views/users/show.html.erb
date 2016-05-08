@@ -4,7 +4,7 @@
       <div class="card-content white-text">
         <span class="card-title"><h3><%= @user.full_name %><h3></span>
         <hr>
-        <span>
+        <span id="user-info">
           <h6><b>Based in:&nbsp;</b>
             <small><%= @user.full_location %></small>
           </h6>
@@ -17,6 +17,7 @@
             <small><%= @user.age %></small>
           </h6>
         </span>
+        <div id="map-canvas"></div>
       </div>
       <div class="card-action">
         <%= link_to "Something", "#" %>
@@ -25,3 +26,6 @@
     </div>
   </div>
 </div>
+<br>
+<br>
+<%= @result.inspect %>
