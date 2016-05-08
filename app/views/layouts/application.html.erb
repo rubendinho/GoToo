@@ -18,7 +18,9 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">&nbsp;go<i class="fa fa-plane" aria-hidden="true"></i>oo</a>
       <ul id="nav-mobile" class="left-ish hide-on-med-and-down">
-        <li><%= link_to "Home", user_path(current_user.id) %></li>
+        <% if current_user != nil %>
+          <li><%= link_to "Home", user_path(current_user.id) %></li>
+        <% end %>
         <li><a href="#">Stub2</a></li>
         <li><a href="#">Stub3</a></li>
       </ul>

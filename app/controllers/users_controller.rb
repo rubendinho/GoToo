@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @result = request.location
+    @current_location = request.location
   end
 
   # GET /users/new
