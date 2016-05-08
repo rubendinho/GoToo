@@ -1,9 +1,9 @@
 <%= javascript_tag do %>
-   latitude  = '<%= j @current_location.data['latitude'] %>';
-   longitude = '<%= j @current_location.data['longitude'] %>';
-   city      = '<%= j @current_location.data['city'] %>';
-   region    = '<%= @current_location.data['region_name'] %>';
-   country   = '<%= @current_location.data['country_name'] %>';
+   latitude  = '<%= j @current_location.data['latitude'].to_s %>';
+   longitude = '<%= j @current_location.data['longitude'].to_s %>';
+   city      = '<%= j @current_location.data['city'].to_s %>';
+   region    = '<%= @current_location.data['region_name'].to_s %>';
+   country   = '<%= @current_location.data['country_name'].to_s %>';
 <% end %>
 
 <div class="row">
