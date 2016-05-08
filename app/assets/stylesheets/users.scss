@@ -1,0 +1,39 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* User Profile Card */
+span.right {
+  display: inline-block;
+}
+
+#name {
+  margin: 0 0 -1rem 0;
+}
+#user-info {
+  float: left;
+  margin-right: 30%;
+
+  &h6 {
+    font-size: 105%;
+  }
+}
+
+div#profile-map {
+  color: black;
+}
+
+#profile-pic {
+  height: 5em;
+  width: auto;
+  display: inline;
+}
+
+#profile-map {
+  width: 50%;
+  height: 400px;
+  display: inline-block;
+  position: relative;
+  right: 0;
+}

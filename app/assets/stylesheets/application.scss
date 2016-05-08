@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'variables';
+@import 'materialize';
+@import 'font-awesome';
+
+/* Navbar alignment fix */
+.left-ish {
+  @extend .left;
+  margin-left: 10%;
+}
+
+.head-room { margin-top: .5rem; }
+
+/* Fix for the Toast-dialog flash messages */
+
+@media only screen and (min-width: 993px){
+  #toast-container {
+    right: 40% !important;
+    top: 13% !important;
+  }
+}

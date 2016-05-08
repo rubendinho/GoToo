@@ -1,5 +1,4 @@
 class Location < ActiveRecord::Base
-  has_many :attractions
 
   enum country: {
     "USA": 1,
@@ -103,7 +102,7 @@ class Location < ActiveRecord::Base
     "Haiti": 100,
     "Heard Island and McDonald Islands": 101,
     "Honduras": 102,
-    "Hong Kong SAR China": 103,
+    "Hong Kong": 103,
     "Hungary": 104,
     "Iceland": 105,
     "India": 106,
