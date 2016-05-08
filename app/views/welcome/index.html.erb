@@ -5,5 +5,16 @@
     <p>
       <%= link_to 'Register', new_user_registration_path, class: 'waves-effect waves-light btn-large' %>
     </p>
+
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to('Login', new_user_session_path)  %>  
+      </li>
+    <% end %>
+
   </div>
 <% end %>
