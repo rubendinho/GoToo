@@ -29,14 +29,28 @@ span.right {
   display: inline-block;
 }
 
+#name {
+  margin: 0 0 -1rem 0;
+}
 #user-info {
   float: left;
   margin-right: 30%;
+
+  &h6 {
+    font-size: 105%;
+  }
 }
 
 div#map-canvas {
   color: black;
 }
+
+#profile-pic {
+  height: 5em;
+  width: auto;
+  display: inline;
+}
+
 
 .head-room { margin-top: .5rem; }
 

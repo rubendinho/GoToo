@@ -2,7 +2,10 @@
   <div class="col m12">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
-        <span class="card-title"><h3><%= @user.full_name %><h3></span>
+        <span class="card-title">
+          <%= image_tag "creeper_face.jpg", id: "profile-pic" %>
+          <h3 id="name"><%= @user.full_name %><h3>
+        </span>
         <hr>
         <span id="user-info">
           <h6><b>Based in:&nbsp;</b>
