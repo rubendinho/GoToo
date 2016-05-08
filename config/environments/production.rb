@@ -10,8 +10,13 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
+  # Set default URL options for development
+  config.action_mailer.default_url_options = { host: 'gotoo-v0-2.herokuapp.com' }
+
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
