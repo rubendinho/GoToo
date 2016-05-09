@@ -13,10 +13,10 @@ span.right {
 }
 #user-info {
   float: left;
-  margin-right: 30%;
+  margin-right: 20%;
 
   &h6 {
-    font-size: 105%;
+    font-size: 115%;
   }
 }
 
@@ -34,6 +34,6 @@ div#profile-map {
   width: 50%;
   height: 400px;
   display: inline-block;
-  position: relative;
-  right: 0;
+  position: relative !important;
+  right: 0 !important;
 }
