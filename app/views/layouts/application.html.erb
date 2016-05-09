@@ -16,13 +16,27 @@
   <!-- Navbar section -->
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">&nbsp;go<i class="fa fa-plane" aria-hidden="true"></i>oo</a>
+      <a href="/" class="brand-logo">&nbsp;go<i class="fa fa-plane" aria-hidden="true"></i>oo</a>
       <ul id="nav-mobile" class="left-ish hide-on-med-and-down">
         <% if current_user != nil %>
           <li><%= link_to "Home", user_path(current_user.id) %></li>
+          <li><%= link_to "Locations", locations_path %></li>
+          <li><%= link_to "Attractions", attractions_path %></li>
+        <% else %>
+          <li><%= link_to "Log-in", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <% end %>
-        <li><a href="#">Stub2</a></li>
-        <li><a href="#">Stub3</a></li>
+      </ul>
+      <ul class="right">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          </li>
+          <% else %>
+          <li>
+            <%= link_to('Login', new_user_session_path)  %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav><!-- Closing of Navbar section -->
@@ -39,7 +53,8 @@
         Materialize.toast('<%= alert %>', 3000, 'rounded')
       </script>
     <% end %>
-  </center><!-- End of Flash Message section -->
+  </center>
+  <!-- End of Flash Message section -->
 
 
   <%= yield :top_content %>
