@@ -13,7 +13,7 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
   # Set default URL options for development
-  config.action_mailer.default_url_options = { host: 'gotoo-v0-2.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'gotoo-v0-3.herokuapp.com' }
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = true
