@@ -12,7 +12,12 @@
       <div class="card-content white-text">
         <span class="card-title">
           <%= image_tag "creeper_face.jpg", id: "profile-pic" %>
-          <h3 id="name"><%= @user.full_name %><h3>
+          <h3 id="name">
+            <%= @user.full_name %>
+          </h3>
+          <% if @user.username != nil %>
+          <h5><small>( <%= @user.username %> )</small></h5>
+          <% end %>
         </span>
         <hr>
         <span id="user-info">

@@ -16,8 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.select :type_of, Attraction.types.keys.map {|role| [role, role]}, placeholder: "Type of attraction" %>
+    <%= f.label :type_of, "Type" %><br>
+    <%= f.select :type_of, Attraction.types.each {|role, index| [role, role ]}, placeholder: "Type of attraction" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
