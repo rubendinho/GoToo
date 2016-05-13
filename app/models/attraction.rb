@@ -1,10 +1,15 @@
 class Attraction < ActiveRecord::Base
-  geocoded_by :address
+  set_rgeo_factory_for_column(:coordinates, RGeo::Geographic.spherical_factory(:srid => 4326))
+  geocoded_by :address do |obj,results|
+    if geo = results.first
+      obj.coordinates = "POINT(#{geo.longitude} #{geo.latitude})"
+    end
+  end
   after_validation :geocode
 
   enum type: {
     "Food": 0,
-    "Lodging": 1, 
+    "Lodging": 1,
     "Culture": 2,
     "Adventure": 3,
     "Shopping": 4,
