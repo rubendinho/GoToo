@@ -1,4 +1,18 @@
 class Location < ActiveRecord::Base
+  geocoded_by :address do |obj,results|
+    if geo = results.first
+      obj.coordinates = "POINT(#{geo.longitude} #{geo.latitude})"
+    end
+  end
+  after_validation :geocode
+
+  def address
+    address = []
+    address << self.city_name
+    address << self.state_province
+    address << self.country
+    address.join(',')
+  end
 
   enum country: {
     "USA": 1,
