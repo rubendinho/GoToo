@@ -30,4 +30,294 @@ locations = Location.create([{
   state_province: 'FL',
   country: 'USA'
   },
+  {
+  city_name: 'Hanoi',
+  state_province: '',
+  country: 'Vietnam'
+  },
+  {
+  city_name: 'Tokyo',
+  state_province: '',
+  country: 'Japan'
+  },
   ])
+attractions = Attraction.create([{
+  name: "Great Ocean Road",
+  type_of: 3,
+  address: "Great Ocean Road, Melbourne, Australia",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Tennis Center",
+  type_of: 2,
+  address: "Tennis Center, Melbourne, Australia",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Great Barrier Reef",
+  type_of: 3,
+  address: "Great Barrier Reef, Cairns, Australia",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Sydney Opera House",
+  type_of: 2,
+  address: "Sydney Opera House, Sydney, Australia",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Hillside Brau",
+  type_of: 0,
+  address: "Hillside Brau, Salzburn, Austria",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Angkor Wat",
+  type_of: 2,
+  address: "Angkor Wat, Siem Reap, Cambodia",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Pub Street",
+  type_of: 6,
+  address: "Pub Street, Siem Reap, Cambodia",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "The Wallace Gallery",
+  type_of: 2,
+  address: "The Wallace Gallery, London, England",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Borough Market",
+  type_of: 0,
+  address: "Borough Market, London, England",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Tate Modern",
+  type_of: 2,
+  address: "Tate Modern, London, England",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Westminster Abbey",
+  type_of: 2,
+  address: "Westminster Abbey, London, England",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Rudas Baths",
+  type_of: 5,
+  address: "Rudas Baths, Budapest, Hungary",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Robot Cabaret",
+  type_of: 6,
+  address: "Robot Cabaret, Tokyo, Japan",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Tsukiji Fish Market",
+  type_of: 6,
+  address: "Tsukiji Fish Market, Tokyo, Japan",
+  description:,
+  user_id: 1
+  },
+  {
+  name: "Meiji Shrine",
+  type_of: 2,
+  address: "Meiji Shrine, Tokyo, Japan",
+  description:,
+  user_id: 1
+  },
+  name: "Park Hyatt Bar",
+  type_of: 6,
+  address: "Park Hyatt Bar, Tokyo, Japan",
+  description:,
+  user_id: 1
+  },
+  name: "Yamazaki Distillery",
+  type_of: 0,
+  address: "Yamazaki Distillery, Kyoto, Japan",
+  description:,
+  user_id: 1
+  },
+  name: "Hotel Shilla",
+  type_of: 1,
+  address: "Hotel Shilla, Seoul, South Korea",
+  description:,
+  user_id: 1
+  },
+  name: "Ghandi House",
+  type_of: 2,
+  address: "Ghandi House, Mumbai, India",
+  description:,
+  user_id: 1
+  },
+  name: "Pagodas",
+  type_of: 2,
+  address: "Pagodas, Bagan, Myanmar",
+  description:,
+  user_id: 1
+  },
+  name: "Star Beam",
+  type_of: 2,
+  address: "Star Beam, Bagan, Myanmar",
+  description:,
+  user_id: 1
+  },
+  name: "Eyeful Restaurant",
+  type_of: 0,
+  address: "Eyeful Restaurant, Inle Lake, Myanmar",
+  description:,
+  user_id: 1
+  },
+  name: "De Rokery",
+  type_of: 6,
+  address: "De Rokery, Amsterdam, Netherlands",
+  description:,
+  user_id: 1
+  },
+  name: "Besseggen",
+  type_of: 3,
+  address: "Besseggen, Besseggen, Norway",
+  description:,
+  user_id: 1
+  },
+  name: "Trolltunga",
+  type_of: 3,
+  address: "Trolltunga, Trolltunga, Norway",
+  description:,
+  user_id: 1
+  },
+  name: "Plaza de Armas",
+  type_of: 2,
+  address: "Plaza de Armas, Cusco, Peru",
+  description:,
+  user_id: 1
+  },
+  name: "Alpaca Expeditions",
+  type_of: 7,
+  address: "Alpaca Expeditions, Machu Picchu, Peru",
+  description:,
+  user_id: 1
+  },
+  name: "Marina Bay Sands",
+  type_of: 6,
+  address: "Marina Bay Sands, Singapore, Singapore",
+  description:,
+  user_id: 1
+  },
+  name: "Chinatown Open Food Plaza",
+  type_of: 0,
+  address: "Chinatown Open Food Plaza, Singapore, Singapore",
+  description:,
+  user_id: 1
+  },
+  name: "Bike Around",
+  type_of: 3,
+  address: "Bike Around, Singapore, Singapore",
+  description:,
+  user_id: 1
+  },
+  name: "Las Ramblas",
+  type_of: 0,
+  address: "Las Ramblas, Barcelona, Spain",
+  description:,
+  user_id: 1
+  },
+  name: "Mount Pilatus",
+  type_of: 3,
+  address: "Mount Pilatus, Zurich, Switzerland",
+  description:,
+  user_id: 1
+  },
+  name: "Hang Gliding Interlaken",
+  type_of: 3,
+  address: "Hang Gliding Interlaken, Interlaken, Switzerland",
+  description:,
+  user_id: 1
+  },
+  name: "Tamsui along the coast",
+  type_of: 3,
+  address: "Tamsui along the coast, Taipei, Taiwan",
+  description:,
+  user_id: 1
+  },
+  name: "Ximin Night Market",
+  type_of: 0,
+  address: "Ximin Night Market, Taipei, Taiwan",
+  description:,
+  user_id: 1
+  },
+  name: "Beitou Hot Springs",
+  type_of: 5,
+  address: "Beitou Hot Springs, Taipei, Taiwan",
+  description:,
+  user_id: 1
+  },
+  name: "Taipei 101",
+  type_of: 4,
+  address: "Taipei 101, Taipei, Taiwan",
+  description:,
+  user_id: 1
+  },
+  name: "Coco van Bike",
+  type_of: 3,
+  address: "Coco van Bike, Bangkok, Thailand",
+  description:,
+  user_id: 1
+  },
+  name: "Rajas Fashion",
+  type_of: 4,
+  address: "Rajas Fashion, Bangkok, Thailand",
+  description:,
+  user_id: 1
+  },
+  name: "Somboon Siam Square One",
+  type_of: 0,
+  address: "Somboon Siam Square One, Putamwan, Bangkok, Thailand",
+  description:,
+  user_id: 1
+  },
+  name: "Gondola Serenade",
+  type_of: 2,
+  address: "Gondola Serenade, Venice, Italy",
+  description:,
+  user_id: 1
+  },
+  name: "Exotic Food Tour",
+  type_of: 0,
+  address: "Exotic Food Tour, Hanoi, Vietnam",
+  description:,
+  user_id: 1
+  },
+  name: "Old Quarter Bia Hoi",
+  type_of: 0,
+  address: "Old Quarter Bia Hoi, Hanoi, Vietnam",
+  description:,
+  user_id: 1
+  },
+  name: "Indochina Sails Cruise",
+  type_of: 3,
+  address: "Inodchina Sails Cruise, Hanoi, Vietnam",
+  description:,
+  user_id: 1
+  },
+  }])

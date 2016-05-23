@@ -12,12 +12,13 @@ class Attraction < ActiveRecord::Base
   enum type: {
     "Food": 0,
     "Lodging": 1,
-    "Culture": 2,
-    "Adventure": 3,
+    "Cultural/Historical": 2,
+    "Adventure/Nature": 3,
     "Shopping": 4,
     "Relaxation": 5,
-    "Entertainment": 6,
-    "Other": 7
+    "Entertainment/NightLife": 6,
+    "Tour": 7,
+    "Other": 8
   }
 
 end
