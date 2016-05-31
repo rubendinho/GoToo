@@ -4,13 +4,24 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    if params[:search]
-      @locations = Location.where("city_name LIKE '%#{params[:search]}%'")
-      if @locations.size.zero?
-        flash[:notice] = "No results found for \"#{params[:search]}\"."
+    if params[:search].length > 3
+      @search = params[:search]
+      @locations = Location.where("lower(city_name) LIKE '%#{@search}%' OR" +
+                                  " CAST(country AS text) LIKE '?'", Location.countries[@search.capitalize]
+      )
+      if @locations.empty?
+        flash.now[:notice] = "No results found for \"#{params[:search]}\"."
+        @locations = []
       end
-    else
-      @locations = Location.all
+    elsif params[:search].length <= 3
+      @search = params[:search].upcase
+      @locations = Location.where("lower(city_name) LIKE '%#{@search.downcase}%' OR" +
+                                  " upper(CAST(country AS text)) LIKE '?'", Location.countries[@search]
+      )
+      if @locations.empty?
+        flash.now[:notice] = "No results found for \"#{params[:search]}\"."
+        @locations = []
+      end
     end
   end
 
