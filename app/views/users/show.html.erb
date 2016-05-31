@@ -5,6 +5,12 @@
    region    = '<%= @current_location.data['region_name'].to_s %>';
    country   = '<%= @current_location.data['country_name'].to_s %>';
 <% end %>
+<%= form_tag locations_path, method: :get do %>
+  <%= label_tag :search, nil %>
+  <%= text_field_tag :search, nil, placeholder: "Search for a Location to find nearby recommendations" %>
+  <%= submit_tag "Search!" %>
+<% end %>
+
 
 <div class="row">
   <div class="col m12">

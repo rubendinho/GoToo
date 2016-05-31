@@ -4,7 +4,14 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    if params[:search]
+      @locations = Location.where("city_name LIKE '%#{params[:search]}%'")
+      if @locations.size.zero?
+        flash[:notice] = "No results found for \"#{params[:search]}\"."
+      end
+    else
+      @locations = Location.all
+    end
   end
 
   # GET /locations/1
