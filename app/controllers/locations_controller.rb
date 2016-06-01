@@ -5,10 +5,10 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     return @locations = Location.all unless params[:search]
-    if params[:search].length > 3
+    if params[:search]
       @search = params[:search]
-      @locations = Location.where("lower(city_name) LIKE '%?%' OR" +
-                                  " country LIKE '?'", @search
+      @locations = Location.where("lower(city_name) LIKE '%#{params[:search]}%' OR" +
+                                  " country LIKE '#{params[:search]}'"
       )
       if @locations.empty?
         flash.now[:notice] = "No results found for \"#{params[:search]}\"."
