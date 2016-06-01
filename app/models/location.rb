@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  belongs_to :country
+  # belongs_to :country
   geocoded_by :address do |obj,results|
     if geo = results.first
       obj.coordinates = "POINT(#{geo.longitude} #{geo.latitude})"
