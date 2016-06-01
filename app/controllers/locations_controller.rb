@@ -15,7 +15,7 @@ class LocationsController < ApplicationController
       end
     elsif params[:search].length <= 3
       @search = params[:search].upcase
-      @locations = Location.where("lower(city_name) LIKE '%#{@search.downcase}%' OR" +
+      @locations = Location.where("lower(city_name) LIKE '%#{@search}%' OR" +
                                   " upper(CAST(country AS text)) LIKE '?'", Location.countries[@search]
       )
       if @locations.empty?

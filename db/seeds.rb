@@ -2,15 +2,15 @@ Attraction.delete_all
 Location.delete_all
 
 Location.create!([
-  {city_name: "Dallas", state_province: "TX", country: 1, description: "This city right here!"},
-  {city_name: "London", state_province: "England", country: 248, description: "Our former countrymen"},
-  {city_name: "Miami", state_province: "FL", country: 1, description: "A city in Southern Florida. "},
-  {city_name: "Birmingham", state_province: "AL", country: 1, description: nil},
-  {city_name: "Los Angeles", state_province: "CA", country: 1, description: nil},
-  {city_name: "San Diego", state_province: "CA", country: 1, description: nil},
-  {city_name: "St. Louis", state_province: "MO", country: 1, description: nil},
-  {city_name: "Orlando", state_province: "FL", country: 1, description: nil},
-  {city_name: "Yerevan", state_province: "Yerevan", country: 12, description: ""},
+  {city_name: "Dallas", state_province: "TX", country: "USA", description: "This city right here!"},
+  {city_name: "London", state_province: "England", country: "United Kingdom", description: "Our former countrymen"},
+  {city_name: "Miami", state_province: "FL", country: "USA", description: "A city in Southern Florida. "},
+  {city_name: "Birmingham", state_province: "AL", country: "USA", description: nil},
+  {city_name: "Los Angeles", state_province: "CA", country: "USA", description: nil},
+  {city_name: "San Diego", state_province: "CA", country: "USA", description: nil},
+  {city_name: "St. Louis", state_province: "MO", country: "USA", description: nil},
+  {city_name: "Orlando", state_province: "FL", country: "USA", description: nil},
+  {city_name: "Yerevan", state_province: "Yerevan", country: "Armenia", description: ""},
   {city_name: 'Hanoi', state_province: '', country: 'Vietnam' },
   {city_name: 'Tokyo', state_province: '', country: 'Japan'},
 ])
