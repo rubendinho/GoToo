@@ -1,4 +1,10 @@
 <h1>Locations</h1>
+
+<%=  form_for :locations, method: :get do |form| %>
+  <%= label_tag :search, nil %>
+  <%= text_field_tag :search, nil, placeholder: "Search by City, Country or 'City, Country'" %>
+  <%= submit_tag "GoToo!" %>
+<% end %>
 <table>
   <thead>
     <tr>

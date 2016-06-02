@@ -15,9 +15,10 @@ class LocationsController < ApplicationController
       @locations = Location.all
     end
 
+    # Preparation for eventually adding a JS framework
     respond_to do |format|
       format.html {}
-      format.json { render json: @customers }
+      format.json { render json: @locations }
     end
   end
 
