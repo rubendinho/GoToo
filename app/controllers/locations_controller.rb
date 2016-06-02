@@ -4,16 +4,20 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    return @locations = Location.all unless params[:search]
-    if params[:search]
+    if params[:search].present?
       @search = params[:search]
-      @locations = Location.where("lower(city_name) LIKE '%#{params[:search]}%' OR" +
-                                  " country LIKE '#{params[:search]}'"
-      )
+      location_search_term = LocationSearch.new(@search)
+      @locations = Location.where(location_search_term.where_clause, location_search_term.where_args).order(location_search_term.order)
       if @locations.empty?
-        flash.now[:notice] = "No results found for \"#{params[:search]}\"."
-        @locations = []
+        flash.now[:notice] = "No results found for \"#{params[:search]}\". Please try your search again."
       end
+    else
+      @locations = Location.all
+    end
+
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @customers }
     end
   end
 
