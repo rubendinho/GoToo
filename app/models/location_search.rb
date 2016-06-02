@@ -36,6 +36,6 @@ class LocationSearch
   end
 
   def extract_country_name(search_term)
-    search_term.gsub(/^(.+),/, '').strip
+    search_term.gsub(/^(.+),\s/, '')
   end
 end
