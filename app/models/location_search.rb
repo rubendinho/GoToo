@@ -5,12 +5,16 @@ class LocationSearch
     @where_clause = ""
     @where_args   = {}
     @order        = ""
-    build_location_search(search)
+    if search.count(',') > 0
+      build_sharp_search(search)
+    else
+      build_fuzzy_search(search)
+    end
   end
 
   private
 
-  def build_location_search(search_term)
+  def build_fuzzy_search(search_term)
     extracted_city    = extract_city_name(search_term)
     extracted_country = extract_country_name(search_term)
 
@@ -18,6 +22,19 @@ class LocationSearch
     @where_args[:city_name] = contains(extracted_city)
 
     @where_clause << " OR #{case_insensitive_search(:country)}"
+    @where_args[:country] = contains(extracted_country)
+
+    @order = "city_name asc"
+  end
+
+  def build_sharp_search(search_term)
+    extracted_city    = extract_city_name(search_term)
+    extracted_country = extract_country_name(search_term)
+
+    @where_clause << case_insensitive_search(:city_name)
+    @where_args[:city_name] = contains(extracted_city)
+
+    @where_clause << " AND #{case_insensitive_search(:country)}"
     @where_args[:country] = contains(extracted_country)
 
     @order = "city_name asc"
