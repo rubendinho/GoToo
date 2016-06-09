@@ -1,14 +1,16 @@
 class Attraction < ActiveRecord::Base
   belongs_to :user
   # set_rgeo_factory_for_column(:coordinates, RGeo::Geographic.spherical_factory(:srid => 4326))
-  geocoded_by :address do |obj,results|
-    if geo = results.first
-      obj.coordinates = "POINT(#{geo.longitude} #{geo.latitude})"
-      obj.latitude  = geo.latitude
-      obj.longitude = geo.longitude
-    end
-  end
-  after_validation :geocode
+
+  # Temp disable for use on heroku
+  # geocoded_by :address do |obj,results|
+  #   if geo = results.first
+  #     obj.coordinates = "POINT(#{geo.longitude} #{geo.latitude})"
+  #     obj.latitude  = geo.latitude
+  #     obj.longitude = geo.longitude
+  #   end
+  # end
+  # after_validation :geocode
 
   enum type: {
     "Food": 0,
