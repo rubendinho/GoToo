@@ -1,4 +1,5 @@
 class Attraction < ActiveRecord::Base
+  belongs_to :user
   # set_rgeo_factory_for_column(:coordinates, RGeo::Geographic.spherical_factory(:srid => 4326))
   geocoded_by :address do |obj,results|
     if geo = results.first
