@@ -4,7 +4,22 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    if params[:search].present?
+      @search = params[:search]
+      location_search_term = LocationSearch.new(@search)
+      @locations = Location.where(location_search_term.where_clause, location_search_term.where_args).order(location_search_term.order)
+      if @locations.empty?
+        flash.now[:notice] = "No results found for \"#{params[:search]}\". Please try your search again."
+      end
+    else
+      @locations = Location.all
+    end
+
+    # Preparation for eventually adding a JS framework
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @locations }
+    end
   end
 
   # GET /locations/1

@@ -11,40 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430200232) do
+ActiveRecord::Schema.define(version: 20160601013305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
 
   create_table "attractions", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "type_of"
-    t.string   "address"
-    t.decimal  "latitude",    precision: 9, scale: 6
-    t.decimal  "longitude",   precision: 9, scale: 6
-    t.text     "description"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.integer  "user_id"
+    t.string    "name"
+    t.integer   "type_of"
+    t.string    "address"
+    t.decimal   "latitude",                                                             precision: 9, scale: 6
+    t.decimal   "longitude",                                                            precision: 9, scale: 6
+    t.text      "description"
+    t.datetime  "created_at",                                                                                   null: false
+    t.datetime  "updated_at",                                                                                   null: false
+    t.integer   "user_id"
+    t.geography "coordinates", limit: {:srid=>4326, :type=>"point", :geographic=>true}
   end
 
   add_index "attractions", ["user_id"], name: "index_attractions_on_user_id", using: :btree
 
-  create_table "locations", force: :cascade do |t|
-    t.string   "city_name"
-    t.string   "state_province"
-    t.integer  "country"
-    t.text     "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "spatial_ref_sys", primary_key: "srid", force: :cascade do |t|
-    t.string  "auth_name", limit: 256
-    t.integer "auth_srid"
-    t.string  "srtext",    limit: 2048
-    t.string  "proj4text", limit: 2048
+  create_table "locations", force: :cascade do |t|
+    t.string    "city_name"
+    t.string    "state_province"
+    t.string    "country"
+    t.text      "description"
+    t.datetime  "created_at",                                                              null: false
+    t.datetime  "updated_at",                                                              null: false
+    t.geography "coordinates",    limit: {:srid=>4326, :type=>"point", :geographic=>true}
   end
 
   create_table "users", force: :cascade do |t|
