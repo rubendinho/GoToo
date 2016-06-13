@@ -1,5 +1,6 @@
 Attraction.delete_all
 Location.delete_all
+Country.delete_all
 
 Location.create!([
   {city_name: "Dallas", state_province: "TX", country: "USA", description: "This city right here!"},
