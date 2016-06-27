@@ -2,10 +2,42 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hometown %><br>
+    <%= f.text_field :hometown, placeholder: "City, State/Province (example:  Dallas, TX / Vancouver, BC)" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :citizenship %><br>
+    <%= f.select :citizenship, User.citizenships.keys.map {|country| [country, country]}, placeholder: "Country of Citizenship" %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br><br>
+    <%= f.select :gender, User.genders.keys.map {|gender| [gender.capitalize, gender ]}, placeholder: "Gender"%>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br>
+    <%= f.date_select :dob, :start_year => 1900, prompt: { day: 'Select day', month: 'Select month', year: 'Select year' } %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
