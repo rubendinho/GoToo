@@ -330,19 +330,4 @@ Location.create!([
   {city_name: "Yerevan", state_province: "Yerevan", country: "Armenia", description: "", coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd0c4450d38 "POINT (44.4991029 40.1791857)">},
   {city_name: "Hanoi", state_province: "", country: "Vietnam", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd0c4450130 "POINT (105.8341598 21.0277644)">},
   {city_name: "Tokyo", state_province: "", country: "Japan", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd0c22a0148 "POINT (139.7319925 35.7090259)">}
-=======
->>>>>>> frontend
-])
-Location.create!([
-  {city_name: "Dallas", state_province: "TX", country: "USA", description: "This city right here!", coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4bb87c920 "POINT (-96.79698789999999 32.7766642)">},
-  {city_name: "London", state_province: "England", country: "United Kingdom", description: "Our former countrymen", coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4ba0fd9fc "POINT (-0.1277583 51.5073509)">},
-  {city_name: "Miami", state_province: "FL", country: "USA", description: "A city in Southern Florida. ", coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4bad73dd0 "POINT (-80.1917902 25.7616798)">},
-  {city_name: "Birmingham", state_province: "AL", country: "USA", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4bad731c8 "POINT (-86.80248999999999 33.5206608)">},
-  {city_name: "Los Angeles", state_province: "CA", country: "USA", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4bad725c0 "POINT (-118.2436849 34.0522342)">},
-  {city_name: "San Diego", state_province: "CA", country: "USA", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4ba0f94d8 "POINT (-117.1610838 32.715738)">},
-  {city_name: "St. Louis", state_province: "MO", country: "USA", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4ba0f8218 "POINT (-90.19940419999999 38.6270025)">},
-  {city_name: "Orlando", state_province: "FL", country: "USA", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4bad774e4 "POINT (-81.3792365 28.5383355)">},
-  {city_name: "Yerevan", state_province: "Yerevan", country: "Armenia", description: "", coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4bad768c8 "POINT (44.4991029 40.1791857)">},
-  {city_name: "Hanoi", state_province: "", country: "Vietnam", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4ba0f53ec "POINT (105.8341598 21.0277644)">},
-  {city_name: "Tokyo", state_province: "", country: "Japan", description: nil, coordinates: #<RGeo::Geographic::SphericalPointImpl:0x3fd4bad7b9b8 "POINT (139.7319925 35.7090259)">}
 ])
