@@ -28,7 +28,7 @@
     <%= f.label :hometown %><br>
     <%= f.text_field :hometown, placeholder: "City, State/Province (example:  Dallas, TX / Vancouver, BC)" %>
   </div>
-  
+
   <div class="field">
     <%= f.label :citizenship %><br>
     <%= f.select :citizenship, User.citizenships.keys.map {|country| [country, country]}, placeholder: "Country of Citizenship" %>
@@ -38,8 +38,8 @@
     <%= f.select :gender, User.genders.keys.map {|gender| [gender.capitalize, gender ]}, placeholder: "Gender"%>
   </div>
   <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
+    <%= f.label :dob %><br>
+    <%= f.date_select :dob, :start_year => Date.current.year, :end_year => 1920 %>
   </div>
 
   <div class="field">
