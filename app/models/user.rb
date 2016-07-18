@@ -5,6 +5,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+   def self.koala(auth)
+     access_token = auth['token']
+     facebook = Koala::Facebook::API.new(access_token)
+     facebook.get_object("me?fields=name,picture")
+   end
+
    def full_name
      "#{self.first_name} #{self.last_name}"
    end
