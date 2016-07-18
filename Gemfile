@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'omniauth-facebook'
+gem 'koala'
 gem 'seed_dump'
 gem 'rgeo'
 gem 'activerecord-postgis-adapter'
