@@ -1,10 +1,13 @@
 <% content_for :top_content do %>
   <div class="container">
     <h1>Welcome to goToo!</h1>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
     <% unless current_user %>
       <p>Register to get started.</p>
       <p>
         <%= link_to 'Register', new_user_registration_path, class: 'waves-effect waves-light btn-large' %>
+        <br>
+
       </p>
     <% end %>
 
