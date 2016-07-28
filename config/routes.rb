@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :attractions
   devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, class_name: 'FormUser'
   resources :users
   resources :locations
   root 'welcome#index'
