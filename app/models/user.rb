@@ -1,17 +1,26 @@
 class User < ActiveRecord::Base
   has_many :attractions
+  has_many :identities
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :confirmable, :omniauthable
 
-   def full_name
-     "#{self.first_name} #{self.last_name}"
-   end
+  def facebook
+   identities.where( :provider => "facebook" ).first
+  end
 
-   def full_location
-     "#{self.hometown}, #{self.citizenship}"
-   end
+  def facebook_client
+   @facebook_client ||= Facebook.client( access_token: facebook.accesstoken )
+  end
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
+  def full_location
+    "#{self.hometown}, #{self.citizenship}"
+  end
 
   enum gender: {
    "Male": 1,

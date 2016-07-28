@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :attractions
-  devise_for :users, :controllers => { registrations: 'registrations' }, class_name: 'FormUser'
+  devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: 'omniauth_callbacks' },
+                      class_name: 'FormUser'
   resources :users
   resources :locations
   root 'welcome#index'
