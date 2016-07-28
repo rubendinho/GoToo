@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'seed_dump'
 gem 'rgeo'
 gem 'activerecord-postgis-adapter'
