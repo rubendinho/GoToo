@@ -43,6 +43,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       @identity.update_attribute( :user_id, @user.id )
+      @user.update_attribute( :first_name, @identity.first_name )
       # This is because we've created the user manually, and Device expects a
       # FormUser class (with the validations)
       @user = FormUser.find @user.id

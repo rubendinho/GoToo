@@ -5,9 +5,10 @@ class CreateIdentities < ActiveRecord::Migration
       t.string :provider
       t.string :accesstoken
       t.string :uid
-      t.string :name
+      t.string :first_name
+      t.string :last_name
       t.string :email
-      t.string :nickname
+      t.string :username
       t.string :image
       t.string :phone
       t.string :urls
