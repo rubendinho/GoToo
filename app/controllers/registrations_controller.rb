@@ -13,6 +13,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  # Lets the user register w/ FB and then set their own password. Without
+  # this DB hashes an empty string and wont let the user update anything
   def update_resource(resource, params)
     resource.update_without_password(params)
   end

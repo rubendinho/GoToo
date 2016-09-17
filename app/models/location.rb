@@ -10,7 +10,7 @@ class Location < ActiveRecord::Base
   def address
     address = []
     address << self.city_name
-    address << self.state_province
+    address << self.state_province unless state_province.nil?
     address << self.country
     address.join(',')
   end
